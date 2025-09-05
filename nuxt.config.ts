@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     injectRegister: 'auto',
-    includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+    includeAssets: ['favicon.ico', 'robots.txt'],
     manifest: {
         name: 'My Nuxt App',
         short_name: 'NuxtApp',
@@ -25,40 +25,27 @@ export default defineNuxtConfig({
         display: 'standalone',
         start_url: '/',
         icons: [
-          { src: '/pwa-192x192.png', sizes: '192x192', type: 'image/png' },
-          { src: '/pwa-512x512.png', sizes: '512x512', type: 'image/png' },
-          { src: '/pwa-512x512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }
+          { src: '/favicon.ico', sizes: '192x192', type: 'image/png' },
+          { src: '/favicon.ico', sizes: '512x512', type: 'image/png' },
+          { src: '/favicon.ico', sizes: '512x512', type: 'image/png', purpose: 'maskable' }
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
-      },
-      devOptions: {
-        enabled: process.env.NODE_ENV === 'development',
-        type: 'module'
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts',
+              expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 365 }
+            }
+          }
+        ]
       },
       strategies: 'generateSW',
       srcDir: 'public',
       filename: 'sw.js',
-      scope: '/',
-      runtimeCaching: [
-        {
-          urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'google-fonts',
-            expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 365 }
-          }
-        },
-        {
-          urlPattern: /^https:\/\/api\.example\.com\/.*/i,
-          handler: 'NetworkFirst',
-          options: {
-            cacheName: 'api-cache',
-            networkTimeoutSeconds: 10,
-            expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 }
-          }
+          scope: '/'
         }
-      ]
-    }
-})
+    })

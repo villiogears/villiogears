@@ -1,7 +1,7 @@
 <template>
     <header>
-        <div>
-        <h1 class="text-3xl font-bold text-center"></h1>
+        <div class="max-w-max mx-auto border border-gray-200 rounded-lg px-6 py-3 bg-white shadow-sm"></div>
+        <h1 class="text-3xl font-bold text-center">Hello world</h1>
         </div>
     </header>
     <NuxtPage />

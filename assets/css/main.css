@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.title {
+    margin: 0;
+    font-size: 2.25rem;
+    text-align: center;
+    flex: 1;
+    color: #00ffff;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #ddd;
+}
+
+body {
+    background-color: white;
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}

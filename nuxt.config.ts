@@ -25,9 +25,9 @@ export default defineNuxtConfig({
         display: 'standalone',
         start_url: '/',
         icons: [
-          { src: '/favicon.ico', sizes: '192x192', type: 'image/png' },
-          { src: '/favicon.ico', sizes: '512x512', type: 'image/png' },
-          { src: '/favicon.ico', sizes: '512x512', type: 'image/png', purpose: 'maskable' }
+          { src: '/favicon.ico', sizes: '192x192', type: 'image/x-icon' },
+          { src: '/favicon.ico', sizes: '512x512', type: 'image/x-icon' },
+          { src: '/favicon.ico', sizes: '512x512', type: 'image/x-icon', purpose: 'maskable' }
         ]
       },
       workbox: {

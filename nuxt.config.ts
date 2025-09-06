@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'NSR elphadeal',
-      titleTemplate: '%s - 磁石祭ZERO',
+      titleTemplate: '%s - NSR ZERO',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

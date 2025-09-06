@@ -5,8 +5,8 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   app: {
     head: {
-      title: 'NSR elphadeal',
-      titleTemplate: '%s - 磁石祭ZERO',
+      title: '0',
+      titleTemplate: '%s - 0',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
